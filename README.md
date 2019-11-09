@@ -32,7 +32,8 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] What can the API return to help clients know if a request was successful?
 
-- [ ] How can we partition our application into sub-applications?
+- [x] How can we partition our application into sub-applications?
+        - We can partition our application into sub-applications by using Routers in Express. That way we can have different CRUD operations to meet different needs. For example, if we had an e-commerce site, we could have a /users router and a /products router, so that we can perform CRUD operations, but keep the code maintainable.
 
 ## Project Setup
 
@@ -73,8 +74,8 @@ The `projectModel.js` helper includes an extra method called `getProjectActions(
 
 Design and build the necessary endpoints to:
 
-- [ ] Perform CRUD operations on _projects_ and _actions_. When adding an action, make sure the `project_id` provided belongs to an existing `project`. If you try to add an action with an `id` of 3 and there is no project with that `id` the database will return an error.
-- [ ] Retrieve the list of actions for a project.
+- [x] Perform CRUD operations on _projects_ and _actions_. When adding an action, make sure the `project_id` provided belongs to an existing `project`. If you try to add an action with an `id` of 3 and there is no project with that `id` the database will return an error.
+- [x] Retrieve the list of actions for a project.
 
 ### Database Schemas
 

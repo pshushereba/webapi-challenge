@@ -1,6 +1,5 @@
 const express = require('express');
 const db = require('../data/helpers/projectModel.js');
-const actionDb = require('../data/helpers/actionModel.js');
 
 // Create a router
 const router = express.Router();
@@ -15,7 +14,7 @@ router.get('/', (req, res) => {
         })
 })
 
-router.get('/:id', (req, res) => {
+router.get('/:id', validateProjectId, (req, res) => {
     const {id} = req.params;
 
     db.get(id)
@@ -26,10 +25,6 @@ router.get('/:id', (req, res) => {
             res.status(500).json({message: "There was a problem retrieving the project."})
         })
 })
-
-// router.get('/:id/actions', (req, res) => {
-
-// })
 
 router.post('/', (req, res) => {
     const projectInfo = req.body;
@@ -71,5 +66,23 @@ router.delete('/:id', (req, res) => {
             res.status(500).json({ message: "Error deleting project" });
         });
 });
+
+// Middleware
+
+function validateProjectId(req, res, next) {
+    const {id} = req.params;
+    
+    db.get(id)
+        .then((project) => {
+            if (project) {
+                next();
+            } else {
+                res.status(404).json({ message: "invalid project id" })
+            }
+        })
+        .catch(() => {
+            res.status(500).json({ error: "The project information could not be retrieved." })
+        })
+};
 
 module.exports = router;
