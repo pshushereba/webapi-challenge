@@ -24,13 +24,17 @@ In this challenge, create a web API around the following resources: `Projects` a
 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your Team Lead.
 
-- [ ] Mention two parts of Express that you learned about this week.
+- [x] Mention two parts of Express that you learned about this week.
+    - I learned about `res.status()` to send different status codes to the user to determine if the CRUD operation that they wanted to use executed correctly or not. I also learned about `.use()`. When we define our server using `server = express()`, we can chain a `.use()` onto `server` for middleware or other things we want to be used with our routes.
 
-- [ ] Describe Middleware?
+- [x] Describe Middleware?
+    - Middleware are functions that we can write to add to the functionality of Express. Because Express is a minimalist framework, it doesn't come with everything that we might want to use. So we can write functions and have them execute in the order that they are defined in our file.
 
-- [ ] Describe a Resource?
+- [x] Describe a Resource?
+    - Everything in a RESTful API is a resource. We use Express routes and the REST architecture to organize our resources and have a clear way of managing them.
 
-- [ ] What can the API return to help clients know if a request was successful?
+- [x] What can the API return to help clients know if a request was successful?
+    - The API can return different status codes to the client to let them know if a request was successful. For example, we could return a status code of 200 for a successful GET request, or 201 for a successful POST request.
 
 - [x] How can we partition our application into sub-applications?
         - We can partition our application into sub-applications by using Routers in Express. That way we can have different CRUD operations to meet different needs. For example, if we had an e-commerce site, we could have a /users router and a /products router, so that we can perform CRUD operations, but keep the code maintainable.
@@ -48,9 +52,9 @@ Follow these steps to set up and work on your project:
 
 Follow these steps for completing your project.
 
-- [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into master on your fork. **Please don't merge your own pull request.**
-- [ ] Add your _Team Lead_ as a Reviewer on the Pull-request
-- [ ] Your _Team Lead_ will count the challenge as done by merging the branch into _master_.
+- [x] Submit a Pull-Request to merge <firstName-lastName> Branch into master on your fork. **Please don't merge your own pull request.**
+- [x] Add your _Team Lead_ as a Reviewer on the Pull-request
+- [x] Your _Team Lead_ will count the challenge as done by merging the branch into _master_.
 
 ## Database Persistence Helpers
 
